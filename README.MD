@@ -60,7 +60,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-One thing worth mentioning: on Mac, port 5000 is sometimes already taken by AirPlay Receiver. If `docker run` complains about the port being in use, either turn off AirPlay Receiver in System Settings or just map to a different port, e.g. `-p 5050:5000`, and hit `http://localhost:5050` instead.
+
 
 ## Endpoints
 
