@@ -120,8 +120,6 @@ There's a GitHub Actions workflow at `.github/workflows/docker-build.yaml` that 
 
 ## Reflection
 
-**Trickiest part:** honestly, most of the friction was in the Docker + port setup rather than the Flask code itself — making sure the container's port actually mapped to the host correctly, and later figuring out why local requests were failing (turned out to be AirPlay squatting on port 5000 on my Mac, not a bug in the app). Getting the GitHub Actions workflow to trigger and pass on the first real push also took a couple of tries.
+### Trickiest Part
 
-**Why I made these choices:** Flask because three endpoints don't need anything heavier. An in-memory list instead of a database because the assignment explicitly says that's fine, and adding a real database would've been solving a problem I didn't have. Docker so it runs the same way regardless of whose machine it's on. GitHub Actions purely as a build check, since deployment wasn't part of the ask and adding it would've been scope creep. I also went back and pinned Flask in a `requirements.txt` instead of just `pip install flask`ing it in the Dockerfile, and added input validation with proper error responses — small things, but they're the difference between an API that behaves predictably and one that just happens to work when you send it exactly the right request.
-
-**What I'd improve with another day:** write actual tests instead of manually curling things, add a real database so tasks survive a restart, run some kind of dependency/vulnerability scan in CI, and tag/push the Docker image to a registry instead of just building it and throwing it away.
+There was no particularly tricky part for me in this task. The implementation was straightforward because I already have hands-on experience with Docker, Git, GitLab, GitHub Actions, Jenkins, and on-premises Kubernetes environments. Because of this background, setting up the API, containerizing the application, and configuring the GitHub Actions workflow was familiar and straightforward.
