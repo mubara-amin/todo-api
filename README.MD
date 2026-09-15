@@ -123,3 +123,20 @@ There's a GitHub Actions workflow at `.github/workflows/docker-build.yaml` that 
 ### Trickiest Part
 
 There was no particularly tricky part for me in this task. The implementation was straightforward because I already have hands-on experience with Docker, Git, GitLab, GitHub Actions, Jenkins, and on-premises Kubernetes environments. Because of this background, setting up the API, containerizing the application, and configuring the GitHub Actions workflow was familiar and straightforward.
+
+
+### Why I Made These Choices
+
+I kept the API simple and used in-memory storage because the assignment specifically stated that a real database was not required. I used Flask because it provides a lightweight way to implement REST endpoints without unnecessary complexity.
+
+I used a Dockerfile with a lightweight Python base image to keep the container simple and portable. I also kept the GitHub Actions workflow focused on building the Docker image on every push as the assignment required CI verification without deployment.
+
+I used separate endpoints for creating, listing, and completing tasks to keep the API behavior clear and easy to test.
+
+
+### What I Would Improve With Another Day
+
+With another day I would improve the Dockerfile by using a multi-stage build to keep the final image more minimal and by running the application as a non-root user.
+
+I would also enhance the GitHub Actions workflow by adding automated API tests and security checks such as dependency and Docker image vulnerability scanning.
+
